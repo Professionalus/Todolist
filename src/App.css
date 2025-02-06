@@ -1,1 +1,28 @@
+body {
+    background: #333333;
+    color: white;
+}
+.new-item-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.to-do-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: auto;
+}
+
+.to-do-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.to-do-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
