@@ -1,5 +1,5 @@
 import '@mantine/core/styles.css';
-import { Button } from "@mantine/core";
+import { Button, Checkbox, Input } from "@mantine/core";
 import './App.css';
 
 export default function App() {
@@ -10,20 +10,24 @@ export default function App() {
                 New Item
             </div>
             <div className={"new-item-wrapper"}>
-                <input type="text"></input>
+                <Input size="md" placeholder="Irj"/>
                 <Button>Add</Button>
             </div>
             <div className={"to-do-title"}>
-                 Todo List
+                Todo List
             </div>
             <div className={"to-do-item"}>
-                <input type="checkbox"></input>
-                <h3>Test1</h3>
+                <Checkbox
+                    defaultChecked
+                    label="I agree to sell "
+                />
                 <Button>Delete</Button>
             </div>
             <div className={"to-do-item"}>
-                <input type="checkbox"></input>
-                <h3>test2</h3>
+                <Checkbox
+                    defaultChecked
+                    label="I agree to sell "
+                />
                 <Button>Delete</Button>
             </div>
         </div>
