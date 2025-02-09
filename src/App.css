@@ -2,7 +2,8 @@ body {
     background: #333333;
     color: white;
 }
-.new-item-wrapper{
+
+.new-item-wrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -23,6 +24,20 @@ body {
 .to-do-item {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.to-do-item-wrapper {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mantine-Checkbox-label{
+    color: wheat;
+}
+
+.item-completed {
+    color: green;
 }
 
