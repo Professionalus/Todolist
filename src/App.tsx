@@ -16,9 +16,11 @@ export default function App() {
 
     function handleNewItemSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        setToDoItems((currentToDoItems) => {
-            return [...currentToDoItems, {id: crypto.randomUUID(), name: newItem, checked: false}]
-        });
+        if (newItem) {
+            setToDoItems((currentToDoItems) => {
+                return [...currentToDoItems, {id: crypto.randomUUID(), name: newItem, checked: false}]
+            });
+        }
         setNewItem("");
     }
 
@@ -33,13 +35,21 @@ export default function App() {
         });
     }
 
+    function handleToDoItemDeleteButtonClick(id: string) {
+        setToDoItems(currentToDoItems => currentToDoItems.filter(item => item.id != id));
+    }
+
     return (
         <div className={"to-do-wrapper"}>
             <div className={"to-do-title"}>
                 New Item
             </div>
-            <form onSubmit={(event) => {handleNewItemSubmit(event)}} className={"new-item-wrapper"}>
-                <Input onChange={(event) => {handleNewItemInputChange(event)}}
+            <form onSubmit={(event) => {
+                handleNewItemSubmit(event)
+            }} className={"new-item-wrapper"}>
+                <Input onChange={(event) => {
+                    handleNewItemInputChange(event)
+                }}
                        value={newItem}
                        size="md"
                        placeholder="Irj"/>
@@ -69,7 +79,8 @@ export default function App() {
                               label: item.checked ? "item-completed" : ""
                           }}
                 />
-                <Button variant="outline" color="red">Delete</Button>
+                <Button onClick={() => handleToDoItemDeleteButtonClick(item.id)} variant="outline"
+                        color="red">Delete</Button>
             </div>
         );
     }
